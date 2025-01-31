@@ -137,10 +137,12 @@ for (let i=1; i<=sub; i++){
     total+=marks
 }
 const average = total/sub
-
+resultDiv.style.display="none"
 end.style.display="inline"
 output1.innerHTML=` total marks: ${total}`
 output2.innerHTML=`Average: ${average}%`
+
+
 
 
 
