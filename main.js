@@ -1,3 +1,4 @@
+// Sin up
 const form = document.querySelector("#form")
 const name = document.querySelector("#name")
 const password = document.querySelector("#password")
@@ -7,6 +8,9 @@ const p1= document.querySelector("#p1")
 const sinup = document.querySelector("#sinup")
 const h1 = document.querySelector("#h1")
 
+
+// Login
+
 const s_form = document.querySelector("#s_form")
 const s_name = document.querySelector("#s_name")
 const s_password = document.querySelector("#s_password")
@@ -15,7 +19,7 @@ const s_btn = document.querySelector("#s_btn")
 const s_p1= document.querySelector("#s_p1")
 const login = document.querySelector("#Login")
 
-
+const span = document.querySelector("#span")
 
 btn.addEventListener("click", (event)=>{
     event.preventDefault()
@@ -24,18 +28,22 @@ btn.addEventListener("click", (event)=>{
         alert("please fill the form")
     }
 
+    else if(!/^[A-Z a-z\s]+$/.test(name.value)){
+        span.innerHTML="Please Enter a valid name"
+    }
+
     else if (password.value.length<6){
         p1.innerHTML="Password mus contain atleast 6 characters"
         p1.style.color="red"
 
     }
-    else if (password.value != confirm.value){
+    else if (password.value !== confirm.value){
         p1.innerHTML="Passwords do not much!"
         p1.style.color="red"
 
     }
     else{
-       sinup.style.display="none"
+        sinup.style.display="none"
         login.style.display="inline"
         // saving to loclstorage
         localStorage.setItem("username",name.value);
@@ -43,6 +51,7 @@ btn.addEventListener("click", (event)=>{
     }
     
 })
+
 
 
 // Login form
